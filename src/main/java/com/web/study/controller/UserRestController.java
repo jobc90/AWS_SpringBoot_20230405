@@ -1,8 +1,16 @@
 package com.web.study.controller;
 
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -59,8 +67,17 @@ public class UserRestController {
 		
 		//userMap에서 해당 id를 가진 객체를 응답
 		//만약에 해당 id가 존재하지 않으면 ErrorResponse를 응답으로 준다. errorMessage = 존재하지 않는 id입니다.
-	
 		
 	}	
+	
+	@GetMapping("/api/users")
+	public ResponseEntity<? extends ResponseDto> getUsers() {
+		
+		
+		
+		
+//		return ResponseEntity.ok().body(DataResponseDto.of(UserStore.userMap.entrySet().stream().collect(Collectors.toCollection(ArrayList::new))));
+		return ResponseEntity.ok().body(DataResponseDto.of(UserStore.userMap.values()));
+	}
 
 }
