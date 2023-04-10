@@ -10,7 +10,6 @@ import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.course.CourseReqDto;
 import com.web.study.service.CourseService;
 
-
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -30,7 +29,7 @@ public class CourseController {
 		return ResponseEntity.ok().body(ResponseDto.ofdefault());
 	}
 	
-	public ResponseEntity<? extends ResponseDto> getCourseAll() {
-		return ResponseEntity.ok().body(DataResponseDto.ofdefault());
-	}
+//	public ResponseEntity<? extends ResponseDto> getCourseAll() {
+//		return ResponseEntity.ok().body(DataResponseDto.ofdefault());
+//	}
 }

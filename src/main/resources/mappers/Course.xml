@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.web.study.repository.CourseRepository">
-	
+<!-- 	
 	<resultMap type="com.web.study.domain.entity.Lecturer" id="lecture">
 		<result column="id" property="id"/>
 		<result column="lecture_name" property="lecture_name"/>
@@ -26,12 +26,12 @@
 		<collection property="lecture" resultMap="lecture"></collection>
 		<collection property="student" resultMap="student"></collection>
 	</resultMap>
-
+ -->
 	<insert id="registe" parameterType="Course">
 		insert into course_mst
 		values(0, #{lecture_id}, #{student_id}, #{registe_date})
 	</insert>
-	
+<!-- 
 	<select id="getCourseAll" resultType="">
 		select
 			cm.id,
@@ -54,5 +54,5 @@
 			left outer join lecturer_mst lrm on(lrm.id = lm.lecturer_id)
 			left outer join student_mst sm on(sm.id = cm.student_id)
 	</select>
-
+ -->
 </mapper>

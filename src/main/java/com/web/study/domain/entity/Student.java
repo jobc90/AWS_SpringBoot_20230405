@@ -2,9 +2,8 @@ package com.web.study.domain.entity;
 
 import java.time.LocalDate;
 
-import org.apache.ibatis.type.Alias;
 
-import com.web.study.dto.response.LecturerRespDto;
+
 import com.web.study.dto.response.StudentRespDto;
 
 import lombok.Builder;
