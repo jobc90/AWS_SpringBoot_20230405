@@ -8,5 +8,6 @@ import com.web.study.domain.entity.Course;
 public interface CourseRepository {
 	
 	public int registe(Course course);
+	public Course getCourseAll();
 
 }

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.course.CourseReqDto;
 import com.web.study.service.CourseService;
@@ -27,5 +28,9 @@ public class CourseController {
 		courseService.registeCourse(courseReqDto);
 		
 		return ResponseEntity.ok().body(ResponseDto.ofdefault());
+	}
+	
+	public ResponseEntity<? extends ResponseDto> getCourseAll() {
+		return ResponseEntity.ok().body(DataResponseDto.ofdefault());
 	}
 }
