@@ -1,4 +1,4 @@
-package com.web.study.dto.request;
+package com.web.study.dto.request.lecture;
 
 import com.web.study.domain.entity.Lecture;
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.web.study.dto.ResponseDto;
-import com.web.study.dto.request.LectureReqDto;
+import com.web.study.dto.request.lecture.LectureReqDto;
 import com.web.study.service.LectureService;
 
 import lombok.RequiredArgsConstructor;
