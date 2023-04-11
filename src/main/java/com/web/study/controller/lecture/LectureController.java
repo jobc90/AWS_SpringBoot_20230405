@@ -37,10 +37,17 @@ public class LectureController {
 
 	}
 	
-	@GetMapping("/lecture/{id}")
-	public ResponseEntity<? extends ResponseDto> getLectureById(@PathVariable int id) {
+//	@GetMapping("/lecture/{id}")
+//	public ResponseEntity<? extends ResponseDto> getLectureById(@PathVariable int id) {
+//		
+//		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureById(id)));
+//
+//	}
+	
+	@GetMapping("/search/lectures")
+	public ResponseEntity<? extends ResponseDto> searchLectures(int type, String searchValue) {
 		
-		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureById(id)));
+		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.searchLecture(type, searchValue)));
 
 	}
 	

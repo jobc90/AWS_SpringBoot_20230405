@@ -1,14 +1,17 @@
 package com.web.study.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import com.web.study.domain.entity.Lecture;
 import com.web.study.dto.request.lecture.LectureReqDto;
 import com.web.study.dto.response.LectureRespDto;
-import com.web.study.dto.response.LecturerRespDto;
+import com.web.study.dto.response.CourseRespDto;
+import com.web.study.dto.response.InstructorRespDto;
 import com.web.study.repository.LectureRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -39,10 +42,24 @@ public class LectureServiceImpl implements LectureService {
 		return dtos;
 	}
 
+//	@Override
+//	public LectureRespDto findLectureById(int id) {
+//		
+//		return lectureRepository.findLectureById(id).toDto();
+//	}
+
 	@Override
-	public LectureRespDto findLectureById(int id) {
+	public List<LectureRespDto> searchLecture(int type, String searchValue) {
+		Map<String, Object> parameterMap = new HashMap<>();
+		parameterMap.put("type", type);
+		parameterMap.put("searchValue", searchValue);
 		
-		return lectureRepository.findLectureById(id).toDto();
+		List<LectureRespDto> dtos = new ArrayList<>();
+		lectureRepository.searchLecture(parameterMap).forEach(entity -> {
+			dtos.add(entity.toDto());
+		});
+		 
+		return dtos;
 	}
 
 

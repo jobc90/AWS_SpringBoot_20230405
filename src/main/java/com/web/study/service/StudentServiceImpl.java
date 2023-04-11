@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.web.study.dto.request.student.StudentReqDto;
-import com.web.study.dto.response.LecturerRespDto;
+import com.web.study.dto.response.InstructorRespDto;
 import com.web.study.dto.response.StudentRespDto;
 import com.web.study.repository.StudentRepository;
 
@@ -37,7 +37,7 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public StudentRespDto findStudentById(int id) {
 //		try {
-//			if(lecturerRepository.findLecturerById(id) == null) {
+//			if(instructorRepository.findInstructorById(id) == null) {
 //				throw new RuntimeException("존재하지 않는 id입니다");
 //			}
 //		} catch (Exception e) {
