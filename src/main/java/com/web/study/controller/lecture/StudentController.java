@@ -28,7 +28,7 @@ public class StudentController {
 		
 		studentService.registeStudent(studentReqDto);
 		
-		return ResponseEntity.ok().body(ResponseDto.ofdefault());
+		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
 	
 	@GetMapping("/students")

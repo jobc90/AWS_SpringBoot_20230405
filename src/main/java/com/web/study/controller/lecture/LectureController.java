@@ -1,15 +1,20 @@
 package com.web.study.controller.lecture;
 
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.study.aop.annotation.ValidAspectTest;
 import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.lecture.LectureReqDto;
+import com.web.study.dto.request.lecture.SearchLectureReqDto;
 import com.web.study.service.LectureService;
 
 import lombok.RequiredArgsConstructor;
@@ -26,7 +31,7 @@ public class LectureController {
 		
 		lectureService.registeLecture(lectureReqDto);
 		
-		return ResponseEntity.ok().body(ResponseDto.ofdefault());
+		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
 	
 	// Read
@@ -43,21 +48,21 @@ public class LectureController {
 //		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureById(id)));
 //
 //	}
-	
+	@ValidAspectTest
 	@GetMapping("/search/lectures")
-	public ResponseEntity<? extends ResponseDto> searchLectures(int type, String searchValue) {
+	public ResponseEntity<? extends ResponseDto> searchLectures(@Valid SearchLectureReqDto searchLectureReqDto, BindingResult bindingResult) {
 		
-		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.searchLecture(type, searchValue)));
+		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.searchLecture(searchLectureReqDto.getType(), searchLectureReqDto.getSearchValue())));
 
 	}
 	
 	// Update
 	public ResponseEntity<? extends ResponseDto> modify() {
-		return ResponseEntity.ok().body(ResponseDto.ofdefault());
+		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}	
 	
 	// Delete
 	public ResponseEntity<? extends ResponseDto> remove() {
-		return ResponseEntity.ok().body(ResponseDto.ofdefault());
+		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 	}
 }

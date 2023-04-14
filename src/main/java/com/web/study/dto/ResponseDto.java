@@ -10,7 +10,7 @@ public class ResponseDto {
 	private final int code;
 	private final String message;
 	
-	public static ResponseDto ofdefault() {
+	public static ResponseDto ofDefault() {
 		return new ResponseDto(true, 200, "Successfully");
 	}
 	

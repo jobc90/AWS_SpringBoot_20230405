@@ -28,7 +28,7 @@ public class InstructorController {
 
 		instructorService.registeInstructor(instructorReqDto);
 		
-		return ResponseEntity.ok().body(ResponseDto.ofdefault());
+		return ResponseEntity.ok().body(ResponseDto.ofDefault());
 
 	}
 	
